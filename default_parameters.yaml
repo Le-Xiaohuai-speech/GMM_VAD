@@ -1,0 +1,59 @@
+# the weights of the log-likelihood ratio of 6 subbands
+kSpectrumWeight: [ 6, 8, 10, 12, 14, 16 ]
+
+# the weights of the noise GMMs of 6 subbands
+# fix-point: np.array([34, 62, 72, 66, 53, 25, 94, 66, 56, 62, 75, 103]) / 128 
+kNoiseDataWeights: [0.265625, 0.484375, 0.5625, 0.515625, 0.4140625, 0.1953125, 
+                    0.734375, 0.515625, 0.4375, 0.484375, 0.5859375, 0.8046875] 
+                    
+# the weights of the speech GMMs of 6 subbands
+# fix-point: np.array([48, 82, 45, 87, 50, 47, 80, 46, 83, 41, 78, 81]) / 128
+kSpeechDataWeights: [0.375    , 0.640625 , 0.3515625, 0.6796875, 0.390625 , 0.3671875,
+                     0.625    , 0.359375 , 0.6484375, 0.3203125, 0.609375 , 0.6328125]
+                     
+# the means of the noise GMMs of 6 subbands
+# fix-point: np.array([6738, 4892, 7065, 6715, 6771, 3369, 7646, 3863, 7820, 7266, 5020, 4362], dtype = np.int16) / 128 
+kNoiseDataMeans: [2.640625 , 38.21875  , 55.1953125, 52.4609375, 52.8984375, 26.3203125, 
+                 59.734375 , 30.1796875, 61.09375  , 56.765625 , 39.21875  , 34.078125]
+                 
+# the means of the speech GMMs of 6 subbands
+# fix-point: np.array([8306, 10085, 10078, 11823, 11843, 6309, 9473, 9571, 10879, 7581, 8180, 7483], dtype = np.int16) / 128
+kSpeechDataMeans: [64.890625 , 78.7890625, 78.734375 , 92.3671875, 92.5234375, 49.2890625, 
+                   74.0078125, 74.7734375, 84.9921875, 59.2265625, 63.90625  , 58.4609375]
+                   
+# the stds of the noise GMMs of 6 subbands
+# fix-point: np.array([378, 1064, 493, 582, 688, 593, 474, 697, 475, 688, 421, 455], dtype = np.int16) / 128
+kNoiseDataStds: [2.953125 , 8.3125   , 3.8515625, 4.546875 , 5.375    , 4.6328125,
+                 3.703125 , 5.4453125, 3.7109375, 5.375    , 3.2890625, 3.5546875]
+                 
+# the stds of the speech GMMs of 6 subbands
+# fix-point: np.array([555, 505, 567, 524, 585, 1231, 509, 828, 492, 1540, 1079, 850], dtype = np.int16) / 128
+kSpeechDataStds: [ 4.3359375,  3.9453125,  4.4296875,  4.09375  ,  4.5703125, 9.6171875,  
+                   3.9765625,  6.46875  ,  3.84375  , 12.03125  ,  8.4296875,  6.640625 ] 
+
+# The thresholds
+# minimum frame-level energy threshold
+kMinenergy: 30
+#  mode 0 quality
+
+kOverHangMax1Q: [ 8, 4, 3]
+kOverHangMax2Q: [ 14, 7, 5]
+kLocalThresholdQ: [24, 21 ,24]
+kGlobalThresholdQ: [57, 48, 57]
+# Minimum difference between the means of the noise and speech GMMs, Q5 
+# fix-point: np.array([544, 544, 576, 576, 576, 576]) / 32
+kMinimumDifference: [17., 17., 18., 18., 18., 18.]
+
+# Limitation of the means
+# fix-point: np.array([11392, 11392, 11520, 11520, 11520, 11520 ])/128
+kMaximumSpeech: [89., 89., 90., 90., 90., 90.]
+
+# fix-point: np.array([ 9216, 9088, 8960, 8832, 8704, 8576])/128 
+kMaximumNoise: [72., 71., 70., 69., 68., 67.]
+
+# fix-point: np.array([ 640,640,640,640,640,640, 768,768,768,768,768,768 ])/128
+kMinimumMean: [5., 5., 5., 5., 5., 5.,
+               6., 6., 6., 6., 6., 6.]
+               
+# fix-point: np.array([384/128])
+kMinStd: 3.0
